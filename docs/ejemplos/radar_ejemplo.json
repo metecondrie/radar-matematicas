@@ -1,0 +1,30 @@
+{
+ "actualizado_en": 1793500000,
+ "queries": ["tecnicatura ciencia de datos a distancia universidad pública argentina gratuita"],
+ "resultados": [
+  {
+   "url": "https://ejemplo.edu.ar/ciencias-de-datos",
+   "titulo": "Tecnicatura en Ciencia de Datos — modalidad a distancia",
+   "snippet": "Carrera pública y gratuita, 100% virtual, con programa de ajustes razonables.",
+   "query": "tecnicatura ciencia de datos a distancia universidad pública argentina gratuita",
+   "dominio": "ejemplo.edu.ar",
+   "tags": ["virtual", "publica", "accesible"],
+   "score": 6,
+   "estado_contacto": "NUEVO",
+   "dominio_contactado": null,
+   "visto_en": 1793500000
+  },
+  {
+   "url": "https://privada-ejemplo.ar/cursos/datos",
+   "titulo": "Curso profesional de Data Science",
+   "snippet": "Curso arancelado con cuotas mensuales.",
+   "query": "carrera análisis de datos online gratuita universidad argentina inscripción",
+   "dominio": "privada-ejemplo.ar",
+   "tags": ["privada"],
+   "score": -1,
+   "estado_contacto": "NUEVO",
+   "dominio_contactado": null,
+   "visto_en": 1793500000
+  }
+ ]
+}

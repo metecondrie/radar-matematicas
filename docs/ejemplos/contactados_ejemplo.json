@@ -1,0 +1,40 @@
+{
+ "sincronizado_en": 1793500000,
+ "cuenta": "usuario-ejemplo@gmail.com",
+ "total_enviados_leidos": 42,
+ "dominios": {
+  "universidad-ejemplo.edu.ar": {
+   "dominio": "universidad-ejemplo.edu.ar",
+   "nombre": "Universidad Nacional de Ejemplo",
+   "carrera": "Tecnicatura en Ciencia de Datos (a distancia)",
+   "emails": ["informes@universidad-ejemplo.edu.ar"],
+   "primer_contacto": 1793200000,
+   "ultimo_contacto": 1793300000,
+   "n_mails": 2,
+   "asuntos": ["Consulta: Tecnicatura en Ciencia de Datos"],
+   "respondido": true
+  },
+  "instituto-demo.edu.ar": {
+   "dominio": "instituto-demo.edu.ar",
+   "nombre": "Instituto Demo",
+   "carrera": "Profesorado en Matemática",
+   "emails": ["alumnado@instituto-demo.edu.ar"],
+   "primer_contacto": 1793250000,
+   "ultimo_contacto": 1793350000,
+   "n_mails": 1,
+   "asuntos": ["Consulta: Profesorado en Matemática — ajustes razonables"],
+   "respondido": false
+  },
+  "academia-privada-ejemplo.ar": {
+   "dominio": "academia-privada-ejemplo.ar",
+   "nombre": "Academia Privada Ejemplo",
+   "carrera": "Curso de Datos (arancelado)",
+   "emails": ["ventas@academia-privada-ejemplo.ar"],
+   "primer_contacto": 1790000000,
+   "ultimo_contacto": 1790100000,
+   "n_mails": 1,
+   "asuntos": ["Consulta: curso de datos"],
+   "respondido": false
+  }
+ }
+}
