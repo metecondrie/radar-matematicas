@@ -17,6 +17,18 @@ import os
 import re
 import sys
 
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+if hasattr(sys.stderr, 'reconfigure'):
+    try:
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Directorios/archivos que NUNCA se recorren (datos reales del usuario).

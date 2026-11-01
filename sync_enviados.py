@@ -33,6 +33,12 @@ RITMO = float(os.environ.get('RADAR_RITMO', '0.12'))
 AUTORESPUESTA = ('-from:(mailer-daemon OR postmaster OR noreply OR no-reply OR donotreply) '
                  '-subject:("respuesta automática" OR autorespuesta OR "auto-reply" OR '
                  '"automatic reply" OR "fuera de la oficina" OR "out of office")')
+PREFIJOS_INSTITUCIONALES = (
+    'secretaria', 'informes', 'alumnos', 'instituto', 'terciario', 'bedelia',
+    'catedra', 'carrera', 'educacion', 'posgrado', 'postgrado', 'universidad',
+    'isp', 'isfd', 'cursada', 'admision', 'inscripcion', 'estudiantes',
+    'docentes', 'academica', 'consultas', 'contacto', 'ingreso', 'info',
+)
 
 _ultimo_tick = [0.0]
 
@@ -106,6 +112,11 @@ def main():
     set_status(corriendo=True, mensaje='listando Enviados…', progreso=0)
     g = Gmail()
     cuenta = (g.tok.get('cuenta') or '').lower()
+    if not cuenta:
+        try:
+            cuenta = (g.perfil().get('emailAddress') or '').lower()
+        except Exception:
+            pass
     ids = g.listar_ids(label='SENT', max_total=5000)
     truncado = len(ids) >= 5000
 
@@ -144,7 +155,13 @@ def main():
             if any(r in e for r in ('noreply', 'no-reply', 'mailer-daemon')):
                 continue
             clave = clave_institucion(e)
-            if clave in util.DOMINIOS_CORREO_LIBRE:
+            d = dominio(e)
+            if d in util.DOMINIOS_CORREO_LIBRE:
+                # Proveedores gratuitos: solo se guardan si corresponden a una secretaría o instituto
+                usuario = e.split('@')[0]
+                if not any(p in usuario for p in PREFIJOS_INSTITUCIONALES):
+                    continue
+            elif clave in util.DOMINIOS_CORREO_LIBRE:
                 continue
             c = contactados.setdefault(clave, {
                 'dominio': clave, 'emails': set(), 'primer_contacto': 0,

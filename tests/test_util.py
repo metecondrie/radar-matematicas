@@ -27,16 +27,19 @@ class TestAtomico(unittest.TestCase):
         [t.start() for t in ts]
         [t.join() for t in ts]
         self.assertEqual(errs, [])
-        d = json.load(open(p, encoding='utf-8'))
+        with open(p, encoding='utf-8') as f:
+            d = json.load(f)
         self.assertEqual(len(d), 120)
 
     def test_json_corrupto_no_pisa(self):
         p = os.path.join(util.DATA, 'roto.json')
-        open(p, 'w', encoding='utf-8').write('{"a": 1,')
+        with open(p, 'w', encoding='utf-8') as f:
+            f.write('{"a": 1,')
         self.assertEqual(util.leer_json(p, {'def': 1}), {'def': 1})
         self.assertTrue(any(f.startswith('roto.json.corrupto-') for f in os.listdir(util.DATA)))
         with self.assertRaises(util.JsonCorrupto):
-            open(p, 'w', encoding='utf-8').write('no json')
+            with open(p, 'w', encoding='utf-8') as f:
+                f.write('no json')
             util.leer_json(p, {}, estricto=True)
 
 
