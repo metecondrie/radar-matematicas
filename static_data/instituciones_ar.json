@@ -1,0 +1,260 @@
+[
+ {
+  "dominio": "uba.ar",
+  "tipo": "publica",
+  "nombre": "Universidad de Buenos Aires",
+  "verificado": false
+ },
+ {
+  "dominio": "unlp.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de La Plata",
+  "verificado": false
+ },
+ {
+  "dominio": "unc.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Córdoba",
+  "verificado": false
+ },
+ {
+  "dominio": "unr.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Rosario",
+  "verificado": false
+ },
+ {
+  "dominio": "uncuyo.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Cuyo",
+  "verificado": false
+ },
+ {
+  "dominio": "uncoma.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional del Comahue",
+  "verificado": false
+ },
+ {
+  "dominio": "uns.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional del Sur",
+  "verificado": false
+ },
+ {
+  "dominio": "untref.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Tres de Febrero",
+  "verificado": false
+ },
+ {
+  "dominio": "uner.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Entre Ríos",
+  "verificado": false
+ },
+ {
+  "dominio": "unlpam.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de La Pampa",
+  "verificado": false
+ },
+ {
+  "dominio": "unpa.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de la Patagonia Austral",
+  "verificado": false
+ },
+ {
+  "dominio": "unam.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Misiones",
+  "verificado": false
+ },
+ {
+  "dominio": "undec.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Chilecito",
+  "verificado": false
+ },
+ {
+  "dominio": "utn.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Tecnológica Nacional",
+  "verificado": false
+ },
+ {
+  "dominio": "unla.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Lanús",
+  "verificado": false
+ },
+ {
+  "dominio": "unq.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Quilmes",
+  "verificado": false
+ },
+ {
+  "dominio": "unsam.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de San Martín",
+  "verificado": false
+ },
+ {
+  "dominio": "unahur.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Hurlingham",
+  "verificado": false
+ },
+ {
+  "dominio": "unlam.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de La Matanza",
+  "verificado": false
+ },
+ {
+  "dominio": "unlu.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Luján",
+  "verificado": false
+ },
+ {
+  "dominio": "unsjb.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de San Juan",
+  "verificado": false
+ },
+ {
+  "dominio": "unsl.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de San Luis",
+  "verificado": false
+ },
+ {
+  "dominio": "unne.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional del Nordeste",
+  "verificado": false
+ },
+ {
+  "dominio": "unse.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Santiago del Estero",
+  "verificado": false
+ },
+ {
+  "dominio": "unt.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Tucumán",
+  "verificado": false
+ },
+ {
+  "dominio": "unsa.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Salta",
+  "verificado": false
+ },
+ {
+  "dominio": "unju.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Jujuy",
+  "verificado": false
+ },
+ {
+  "dominio": "unca.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Catamarca",
+  "verificado": false
+ },
+ {
+  "dominio": "unlar.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de La Rioja",
+  "verificado": false
+ },
+ {
+  "dominio": "unformosa.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Nacional de Formosa",
+  "verificado": false
+ },
+ {
+  "dominio": "upc.edu.ar",
+  "tipo": "publica",
+  "nombre": "Universidad Provincial de Córdoba",
+  "verificado": false
+ },
+ {
+  "dominio": "uade.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad Argentina de la Empresa",
+  "verificado": false
+ },
+ {
+  "dominio": "austral.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad Austral",
+  "verificado": false
+ },
+ {
+  "dominio": "ucema.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad del CEMA",
+  "verificado": false
+ },
+ {
+  "dominio": "siglo21.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad Siglo 21",
+  "verificado": false
+ },
+ {
+  "dominio": "uai.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad Abierta Interamericana",
+  "verificado": false
+ },
+ {
+  "dominio": "umaza.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad Juan Agustín Maza",
+  "verificado": false
+ },
+ {
+  "dominio": "uca.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad Católica Argentina",
+  "verificado": false
+ },
+ {
+  "dominio": "up.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad de Palermo",
+  "verificado": false
+ },
+ {
+  "dominio": "ubp.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad Blas Pascal",
+  "verificado": false
+ },
+ {
+  "dominio": "ucael.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad Católica de La Plata (ref.)",
+  "verificado": false
+ },
+ {
+  "dominio": "unimoron.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad de Morón",
+  "verificado": false
+ },
+ {
+  "dominio": "usal.edu.ar",
+  "tipo": "privada",
+  "nombre": "Universidad del Salvador",
+  "verificado": false
+ }
+]

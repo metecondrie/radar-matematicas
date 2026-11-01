@@ -1,0 +1,14 @@
+# secretos y datos personales: este repo NUNCA los versiona
+client_secret.json
+data/
+uploads/
+war_room.html
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+
+# varios
+.DS_Store
+*.log
