@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="radar-token" content="__RADAR_TOKEN__">
+<title>Radar Matemáticas — War Room</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header>
+  <h1>🎖 RADAR <span>MATEMÁTICAS</span> — War Room</h1>
+  <span class="pill" id="pillGmail">Gmail: …</span>
+  <span class="pill" id="pillToken">token: …</span>
+  <span class="pill" id="pillSync">sync: …</span>
+  <span class="pill" style="margin-left:auto">✋ modo seguro: este sistema NUNCA envía mails solo</span>
+</header>
+<nav>
+  <button data-tab="war" class="on">🎖 War Room</button>
+  <button data-tab="bandeja">📥 Bandeja</button>
+  <button data-tab="radar">🛰 Radar</button>
+  <button data-tab="ajustes">⚙ Ajustes</button>
+</nav>
+<main>
+
+<div class="tab on" id="tab-war">
+  <div id="warBanners"></div>
+  <div class="kpis" id="kpis"></div>
+  <h3 style="margin:6px 0 10px">Campaña de contacto <span class="muted" id="campMeta"></span></h3>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Estado</th><th>Institución</th><th>Carrera / asunto</th><th>Último contacto</th><th>Mails</th><th>Acción</th></tr></thead>
+    <tbody id="campBody"></tbody>
+  </table>
+  </div>
+</div>
+
+<div class="tab" id="tab-bandeja">
+  <div id="banBanners"></div>
+  <div class="grid2">
+    <div class="panel" style="padding:0">
+      <div style="padding:10px 12px;border-bottom:1px solid var(--border)" class="row">
+        <strong style="font-size:13px">Recibidos</strong>
+        <span class="badge b-demo" id="banModo">…</span>
+        <label class="row" style="margin:0;font-size:11px"><input type="checkbox" id="banTodo" style="width:auto"> ver todo</label>
+        <button class="btn sm" style="margin-left:auto" data-act="ban-refresh">⟳ Actualizar</button>
+      </div>
+      <div class="listbox" id="banList"></div>
+    </div>
+    <div class="panel" id="banDetail"><p class="muted">Elegí un correo de la lista. Acá decidís vos: responder, no responder o ignorar. Nada se envía automáticamente.</p></div>
+  </div>
+</div>
+
+<div class="tab" id="tab-radar">
+  <div class="panel row" style="margin-bottom:14px">
+    <button class="btn primary" data-act="radar-buscar">🛰 Buscar programas ahora</button>
+    <span class="muted" id="radarStatus">sin búsquedas todavía</span>
+    <span class="muted" style="margin-left:auto" id="radarMeta"></span>
+  </div>
+  <div id="radarErrores"></div>
+  <div id="radarList"></div>
+</div>
+
+<div class="tab" id="tab-ajustes">
+  <section class="cfg panel">
+    <h3>📬 Conexión Gmail <span class="badge b-demo" id="ajGmailState">…</span></h3>
+    <p class="muted">Permiso único <code>gmail.readonly</code>: el bot solo LEE. No puede enviar, borrar ni modificar nada. Los correos los mandás vos desde tu correo (el sistema solo arma el borrador).</p>
+    <div id="ajGmailBody"></div>
+  </section>
+
+  <section class="cfg panel">
+    <h3>✨ Inteligencia artificial para redactar <span class="badge b-demo" id="iaEstado">…</span></h3>
+    <p class="muted">Opcional y desactivada por defecto. Sin configurar, el botón ✨ usa el <b>redactor local</b> (plantillas propias, sin conexión). Si la activás, el contenido del mensaje que elijas viajará al proveedor que configures (se muestra el host abajo); los emails y teléfonos se enmascaran antes de enviar.</p>
+    <label>Proveedor</label>
+    <select id="iaPreset">
+      <option value="">— personalizado —</option>
+      <option value="https://dashscope.aliyuncs.com/compatible-mode/v1|qwen-plus">Qwen (DashScope) · qwen-plus</option>
+      <option value="https://dashscope.aliyuncs.com/compatible-mode/v1|qwen-turbo">Qwen (DashScope) · qwen-turbo</option>
+      <option value="https://api.openai.com/v1|gpt-4o-mini">OpenAI · gpt-4o-mini</option>
+      <option value="https://api.groq.com/openai/v1|llama-3.3-70b-versatile">Groq · llama-3.3-70b</option>
+      <option value="https://openrouter.ai/api/v1|openrouter/auto">OpenRouter · auto</option>
+      <option value="http://localhost:11434/v1|llama3">Ollama local · llama3</option>
+    </select>
+    <label>Base URL de la API</label>
+    <input id="iaBase" placeholder="https://…/v1  (o http://localhost:11434/v1)">
+    <div class="row" style="gap:12px">
+      <div style="flex:1"><label>Modelo</label><input id="iaModelo" placeholder="qwen-plus"></div>
+      <div style="flex:2"><label>API key</label><input id="iaKey" type="password" placeholder="se guarda solo en este equipo"></div>
+    </div>
+    <p class="muted" id="iaHost"></p>
+    <div class="row" style="margin-top:12px">
+      <button class="btn primary" data-act="ajustes-guardar">💾 Guardar</button>
+      <button class="btn ai" data-act="ia-probar">🧪 Probar IA</button>
+      <span class="muted" id="iaTest"></span>
+    </div>
+  </section>
+
+  <section class="cfg panel">
+    <h3>👤 Tu perfil (para los borradores)</h3>
+    <div class="row" style="gap:12px">
+      <div style="flex:1"><label>Firma</label><input id="pfFirma" placeholder="Nombre y apellido"></div>
+      <div style="flex:1"><label>Nombre de pila</label><input id="pfPila" placeholder="Como te presentás"></div>
+    </div>
+    <label>Contexto personal (la IA lo usa; el motor local no lo necesita)</label>
+    <textarea id="pfContexto" rows="3" placeholder="Opcional: qué buscás, desde dónde escribís…"></textarea>
+    <label class="row" style="text-transform:none;letter-spacing:0"><input type="checkbox" id="pfAcces" style="width:auto"> preguntar por accesibilidad / ajustes razonables en los borradores</label>
+    <label>Texto de accesibilidad (pregunta institucional, sin datos personales)</label>
+    <input id="pfAccesTxt">
+    <label>Modo OAuth de Google Cloud</label>
+    <select id="pfOAuth"><option value="pruebas">Pruebas (token vence a los 7 días)</option><option value="produccion">Producción (sin vencimiento semanal; ver docs)</option></select>
+    <div class="row" style="margin-top:12px"><button class="btn primary" data-act="ajustes-guardar">💾 Guardar</button></div>
+  </section>
+
+  <section class="cfg panel">
+    <h3>🛰 Consultas del radar</h3>
+    <p class="muted">Una por línea. Se usan en la próxima búsqueda.</p>
+    <textarea id="radQueries" rows="6"></textarea>
+    <div class="row" style="margin-top:10px"><button class="btn primary" data-act="ajustes-guardar">💾 Guardar</button></div>
+  </section>
+</div>
+</main>
+
+<div class="modalbg" id="modalBg">
+  <div class="modal">
+    <h3 id="mdTitulo">✉ Borrador</h3>
+    <label>Para</label><input id="mdTo">
+    <label>Asunto</label><input id="mdSubject">
+    <label>Cuerpo <span class="muted">(editable — revisalo siempre antes de mandar)</span></label>
+    <textarea id="mdBody" rows="13"></textarea>
+    <div class="row" style="margin-top:12px">
+      <button class="btn ai" data-act="md-ia">✨ Redactar con IA</button>
+      <button class="btn" data-act="md-local">📝 Redactor local</button>
+      <span class="muted" id="mdAviso"></span>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <button class="btn primary" data-act="md-gmail">📧 Abrir en Gmail web</button>
+      <button class="btn" data-act="md-mailto">✉ Cliente de correo</button>
+      <button class="btn" data-act="md-copy">📋 Copiar</button>
+      <button class="btn" style="margin-left:auto" data-act="md-close">Cerrar</button>
+    </div>
+  </div>
+</div>
+<div id="toast"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
